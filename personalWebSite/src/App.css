@@ -2,3 +2,15 @@
   margin: 0;
   padding: 0;
 }
+
+body.light-mode {
+  background-color: #edecf2;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #222;
+  color: white;
+  transition: all 0.3s ease;
+}
