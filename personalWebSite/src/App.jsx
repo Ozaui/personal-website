@@ -2,7 +2,8 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import "./App.css";
 import Header from "./components/layout/Header";
-import Body from "./components/layout/Body";
+import Body from "./components/sections/Body";
+import AboutMe from "./components/sections/AboutMe";
 
 function App() {
   const mode = useSelector((state) => state.theme.mode);
@@ -20,6 +21,8 @@ function App() {
     <div>
       <Header />
       <Body />
+      <hr />
+      <AboutMe />
     </div>
   );
 }

@@ -1,0 +1,26 @@
+.aboutMe-container {
+}
+.aboutMe-text {
+  margin: 10px 20%;
+  font-size: 20px;
+  text-indent: 30px;
+}
+
+.educationExperiance-container {
+  margin: 10px 20%;
+}
+.experiance-title {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.experiance {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.experiance-text {
+  margin-left: 10%;
+}
