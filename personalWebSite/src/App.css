@@ -4,14 +4,16 @@
 }
 
 body.light-mode {
-  background-color: #ede9f9;
-  color: black;
+  background: linear-gradient(135deg, #ede9f9 0%, #d1f3f8 100%);
+  color: #222;
+  min-height: 100vh;
   transition: all 0.3s ease;
 }
 
 body.dark-mode {
-  background-color: #302f2f;
-  color: white;
+  background: linear-gradient(135deg, #23243a 0%, #302f2f 100%);
+  color: #f3f3f3;
+  min-height: 100vh;
   transition: all 0.3s ease;
 }
 
