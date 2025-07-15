@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+body {
+  font-family: "Merriweather", serif;
+}
+
 body.light-mode {
   background: linear-gradient(135deg, #ede9f9 0%, #d1f3f8 100%);
   color: #222;

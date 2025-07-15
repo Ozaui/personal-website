@@ -7,7 +7,6 @@
 .profile-container {
   display: flex;
   align-items: center;
-
   gap: 40px;
   padding: 20px;
   max-width: 1200px;
@@ -50,6 +49,7 @@
 
 .greeting-line {
   display: flex;
+  justify-content: center;
   align-items: baseline;
   gap: 15px;
   flex-wrap: wrap;

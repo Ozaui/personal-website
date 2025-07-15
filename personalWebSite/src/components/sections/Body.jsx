@@ -13,11 +13,7 @@ const Body = () => {
           #c2e9fb 40%, 
           #fbc7c7 75%,   
           #f0e6d2 100%)`
-      : `radial-gradient(circle, 
-          #2c3e50 0%, 
-          #34495e 40%, 
-          #3d566e 75%, 
-          #2a3a4f 100%)`;
+      : `#1b1c1d`;
   };
 
   const getBoxShadowStyle = () => {
@@ -28,9 +24,7 @@ const Body = () => {
           5px 5px 15px rgba(0, 0, 0, 0.1)
         `
       : `
-          inset 15px 15px 30px rgba(0, 0, 0, 0.7),
-          inset -15px -15px 40px rgba(70, 90, 120, 0.9),
-          5px 5px 15px rgba(0, 0, 0, 0.8)
+       
         `;
   };
 
@@ -48,9 +42,9 @@ const Body = () => {
         </div>
         <div className="name-section">
           <div className="greeting-line">
-            <h1 className="greeting">Hello,</h1>
+            <h1 className="greeting">Hello, My name is </h1>
             <h2 className="name-text">
-              My name is <span className="name">Özay Melih Yıldız</span>
+              <span className="name">Özay Melih Yıldız</span>
             </h2>
           </div>
           <h2 className="title-text">Junior Full Stack Web Developer</h2>
