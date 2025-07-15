@@ -10,7 +10,7 @@ body.light-mode {
 }
 
 body.dark-mode {
-  background-color: #302f2f;
+  background-color: #3d3f43;
   color: white;
   transition: all 0.3s ease;
 }
