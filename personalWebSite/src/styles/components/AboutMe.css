@@ -51,14 +51,12 @@ body.dark-mode .experiance-inner {
     0 1.5px 6px 0 rgba(30, 30, 40, 0.18);
 }
 
-/* Hover ile dönüş */
 .experiance:hover .experiance-inner {
   transform: rotateY(180deg) scale(1.03);
   box-shadow: 0 12px 32px 0 rgba(80, 80, 120, 0.22),
     0 2px 8px 0 rgba(80, 80, 120, 0.15);
 }
 
-/* Ön ve arka yüz ortak stilleri */
 .experiance-front,
 .experiance-back {
   position: absolute;

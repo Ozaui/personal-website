@@ -3,21 +3,15 @@
   padding: 0;
 }
 
-body {
-  font-family: "Merriweather", serif;
-}
-
 body.light-mode {
-  background: linear-gradient(135deg, #ede9f9 0%, #d1f3f8 100%);
-  color: #222;
-  min-height: 100vh;
+  background-color: #ede9f9;
+  color: black;
   transition: all 0.3s ease;
 }
 
 body.dark-mode {
-  background: #3d3f43;
-  color: #f3f3f3;
-  min-height: 100vh;
+  background-color: #302f2f;
+  color: white;
   transition: all 0.3s ease;
 }
 
