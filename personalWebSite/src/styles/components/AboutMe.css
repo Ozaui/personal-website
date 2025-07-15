@@ -15,42 +15,150 @@
 .education {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
+
 .experiance-title {
   margin-top: 50px;
   margin-bottom: 20px;
   text-align: center;
 }
+
 .experiance {
-  height: 200px;
   width: 450px;
-  margin-top: 20px;
-  margin-left: 20px;
-  border: 1px solid black;
+  height: 200px;
+  margin: 20px;
+  perspective: 1000px;
+}
+
+.experiance-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+  border-radius: 25px;
+  box-shadow: 0 6px 24px 0 rgba(80, 80, 120, 0.15),
+    0 1.5px 6px 0 rgba(80, 80, 120, 0.1);
+  border: 1.5px solid #e0d7fa;
+  background: linear-gradient(135deg, #ede9f9 60%, #d1f3f8 100%);
+}
+
+body.dark-mode .experiance-inner {
+  background: linear-gradient(135deg, #302f2f 60%, #3a3a4d 100%);
+  border: 1.5px solid #444;
+  box-shadow: 0 6px 24px 0 rgba(30, 30, 40, 0.25),
+    0 1.5px 6px 0 rgba(30, 30, 40, 0.18);
+}
+
+/* Hover ile dönüş */
+.experiance:hover .experiance-inner {
+  transform: rotateY(180deg) scale(1.03);
+  box-shadow: 0 12px 32px 0 rgba(80, 80, 120, 0.22),
+    0 2px 8px 0 rgba(80, 80, 120, 0.15);
+}
+
+/* Ön ve arka yüz ortak stilleri */
+.experiance-front,
+.experiance-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   border-radius: 25px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  background-color: pink;
-  animation: fadeInLeftForExperiance 1s ease-out;
+  justify-content: flex-start;
+  padding-left: 10%;
+  box-sizing: border-box;
+  transition: background 0.3s, color 0.3s;
 }
 
-.experiance:hover {
-  transform: rotatey(180deg);
+.experiance-front {
+  background: transparent;
+  color: #2d2d2d;
+}
+
+body.dark-mode .experiance-front {
+  color: #f3f3f3;
+}
+
+.experiance-back {
+  background: linear-gradient(135deg, #d1f3f8 60%, #ede9f9 100%);
+  transform: rotateY(180deg);
+  color: #2d2d2d;
+}
+
+body.dark-mode .experiance-back {
+  background: linear-gradient(135deg, #3a3a4d 60%, #302f2f 100%);
+  color: #f3f3f3;
+}
+
+.experiance-back > a {
+  text-decoration: none;
+  color: #45b7d1;
+  font-weight: 600;
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+
+.experiance-back > a:hover {
+  color: #ff6b6b;
 }
 
 .experiance-text {
-  margin-left: 10%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-left: 18px;
+  letter-spacing: 0.2px;
 }
 
-@keyframes fadeInLeftForExperiance {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
+.experiance-front svg {
+  color: #45b7d1;
+  filter: drop-shadow(0 2px 6px #4ecdc4aa);
+  margin-right: 8px;
+}
+
+body.dark-mode .experiance-front svg {
+  color: #4ecdc4;
+}
+
+.logo {
+  width: 100px;
+  margin-right: 50px;
+}
+
+@media (max-width: 768px) {
+  .aboutMe-text,
+  .educationExperiance-container {
+    margin: 30px 5%;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  .experiance {
+    width: 95vw;
+    max-width: 350px;
+    margin: 15px auto;
+    height: 180px;
+  }
+  .logo {
+    width: 70px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutMe-text,
+  .educationExperiance-container {
+    margin: 15px 2%;
+    font-size: 16px;
+  }
+  .experiance {
+    width: 98vw;
+    max-width: 260px;
+    height: 140px;
+  }
+  .logo {
+    width: 50px;
+    margin-right: 10px;
   }
 }
