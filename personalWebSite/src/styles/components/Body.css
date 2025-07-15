@@ -84,8 +84,6 @@
   color: inherit;
   margin: 0;
   position: relative;
-  animation: fadeInRight 1s ease-out 0.3s both;
-  transition: all 0.3s ease;
 }
 
 .name-text::after {

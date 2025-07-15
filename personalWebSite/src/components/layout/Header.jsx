@@ -16,7 +16,11 @@ const Header = () => {
           padding: "0 16px",
         }}
       >
-        headers - Mode: {mode}
+        <div>
+          <button>Contact Me</button>
+          <button>My Projects</button>
+          <button>About Me</button>
+        </div>
         <button
           onClick={() => dispatch(handleMode())}
           style={{

@@ -23,6 +23,7 @@ function App() {
       <Body />
       <hr />
       <AboutMe />
+      <hr />
     </div>
   );
 }

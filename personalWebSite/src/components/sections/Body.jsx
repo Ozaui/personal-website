@@ -53,7 +53,7 @@ const Body = () => {
               My name is <span className="name">Özay Melih Yıldız</span>
             </h2>
           </div>
-          <h2 className="title-text">Full Stack Web Developer</h2>
+          <h2 className="title-text">Junior Full Stack Web Developer</h2>
         </div>
       </div>
     </div>
