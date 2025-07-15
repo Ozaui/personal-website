@@ -112,6 +112,7 @@
 
 .title-text {
   font-size: 60px;
+  text-align: center;
   color: whitesmoke;
   transform: skewY(-2deg) skewX(-10deg);
   text-shadow: -2px 2px 0 #801e00, -4px 4px 0 #801e00, -6px 6px 0 #801e00,
