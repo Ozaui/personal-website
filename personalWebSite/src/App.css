@@ -4,8 +4,8 @@
 }
 
 body.light-mode {
-  background-color: #ede9f9;
-  color: black;
+  background: linear-gradient(135deg, #bcb8d6 0%, #a7b8c7 100%);
+  color: #181a20;
   transition: all 0.3s ease;
 }
 

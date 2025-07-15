@@ -8,12 +8,8 @@ const Body = () => {
 
   const getBackgroundStyle = () => {
     return mode === "light"
-      ? `radial-gradient(circle, 
-          #a1c4fd 0%,    
-          #c2e9fb 40%, 
-          #fbc7c7 75%,   
-          #f0e6d2 100%)`
-      : `#1b1c1d`;
+      ? `radial-gradient(circle, #bcb8d6 0%, #a7b8c7 60%, #8e9ba8 100%)`
+      : `radial-gradient(circle, #23243a 0%, #3d3f43 100%)`;
   };
 
   const getBoxShadowStyle = () => {
