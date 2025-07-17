@@ -36,6 +36,7 @@ const Body = () => {
         >
           <img src={profileImage} alt="Profil" className="profile-image" />
         </div>
+        test
         <div className="name-section">
           <div className="greeting-line">
             <h1 className="greeting">Hello, My name is </h1>
