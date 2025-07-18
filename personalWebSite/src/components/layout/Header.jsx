@@ -2,11 +2,24 @@ import { FaRegMoon, FaSun } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { handleMode } from "../../redux/Slices/themeSlice";
 
+const HEADER_HEIGHT = 72;
+
 const Header = () => {
   const mode = useSelector((state) => state.theme.mode);
   const dispatch = useDispatch();
   return (
-    <div style={{ margin: "20px", padding: "0 20px" }}>
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        zIndex: 1000,
+        background: "transparent",
+        boxShadow: "0 2px 12px rgba(0,0,0,0.07)",
+        height: HEADER_HEIGHT,
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -14,6 +27,7 @@ const Header = () => {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 16px",
+          height: HEADER_HEIGHT,
         }}
       >
         <div>
