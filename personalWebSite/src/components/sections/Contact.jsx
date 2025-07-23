@@ -16,7 +16,7 @@ const CONTACTS = [
   {
     icon: <FaLinkedin size={36} />,
     label: "LinkedIn",
-    url: "www.linkedin.com/in/ozay-melih-yildiz",
+    url: "https://www.linkedin.com/in/ozay-melih-yildiz",
   },
   {
     icon: <FaEnvelope size={36} />,
