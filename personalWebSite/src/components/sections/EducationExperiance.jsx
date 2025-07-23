@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   IoSchool,
   IoBookSharp,
@@ -5,98 +6,140 @@ import {
   IoHardwareChip,
   IoCall,
 } from "react-icons/io5";
+import { IoMdCode } from "react-icons/io";
 import SDU from "../../assets/sdu_logo.png";
 import ETIYA from "../../assets/ETIYA.png";
 import TWOKEKGAMES from "../../assets/2KEKGAMES.png";
 import MONSTERNOTEBOOK from "../../assets/MonsterNotebook.png";
+import KODLUYORUZ from "../../assets/Kodluyoruz.png";
 
 const EducationExperiance = () => {
+  const [flippedIndex, setFlippedIndex] = useState(null);
+
+  const handleFlip = (idx) => {
+    setFlippedIndex(flippedIndex === idx ? null : idx);
+  };
+
   return (
-    <div className="educationExperiance-container">
+    <div className="educationExperiance-container" id="education-section">
       <h1 className="experiance-title">Education</h1>
       <div className="education">
-        <div className="experiance">
-          <div className="experiance-inner">
-            <div className="experiance-front">
-              <IoSchool size={40} />
-              <p className="experiance-text">
+        {[
+          {
+            icon: <IoSchool size={40} />,
+            text: (
+              <>
                 Computer Engineering - Suleyman Demirel University <br />
                 2021 - 2025
-              </p>
-            </div>
-            <div className="experiance-back">
-              <img src={SDU} alt="SDU_Logo" className="logo" />
-              <a href="https://muhendislik.sdu.edu.tr/bilmuh">Go to web Site</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="experiance">
-          <div className="experiance-inner">
-            <div className="experiance-front">
-              <IoBookSharp size={40} />
-              <p className="experiance-text">
+              </>
+            ),
+            img: SDU,
+            link: "https://muhendislik.sdu.edu.tr/bilmuh",
+          },
+          {
+            icon: <IoBookSharp size={40} />,
+            text: (
+              <>
                 English Preparatory - Suleyman Demirel University <br />
                 2020 - 2021
-              </p>
-            </div>
-            <div className="experiance-back">
-              <img src={SDU} alt="SDU_Logo" className="logo" />
-              <a href="https://muhendislik.sdu.edu.tr/bilmuh">Go to web Site</a>
+              </>
+            ),
+            img: SDU,
+            link: "https://muhendislik.sdu.edu.tr/bilmuh",
+          },
+        ].map((item, idx) => (
+          <div
+            className={`experiance${flippedIndex === idx ? " flipped" : ""}`}
+            key={idx}
+            onClick={() => handleFlip(idx)}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="experiance-inner">
+              <div className="experiance-front">
+                {item.icon}
+                <p className="experiance-text">{item.text}</p>
+              </div>
+              <div className="experiance-back">
+                <img src={item.img} alt="SDU_Logo" className="logo" />
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  Go to web Site
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
 
       <h1 className="experiance-title">Work Experience</h1>
       <div className="education">
-        <div className="experiance">
-          <div className="experiance-inner">
-            <div className="experiance-front">
-              <IoHardwareChip size={40} />
-              <p className="experiance-text">
+        {[
+          {
+            icon: <IoHardwareChip size={40} />,
+            text: (
+              <>
                 System Support Intern - ETIYA <br />
                 2024
-              </p>
-            </div>
-            <div className="experiance-back">
-              <img src={ETIYA} alt="ETIYA" className="logo" />
-              <a href="https://www.etiya.com/tr">Go to web Site</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="experiance">
-          <div className="experiance-inner">
-            <div className="experiance-front">
-              <IoGameController size={40} />
-              <p className="experiance-text">
+              </>
+            ),
+            img: ETIYA,
+            link: "https://www.etiya.com/tr",
+          },
+          {
+            icon: <IoMdCode size={40} />,
+            text: (
+              <>
+                Frontend Mentor - KODLUYORUZ <br />
+                2024
+              </>
+            ),
+            img: KODLUYORUZ,
+            link: "https://www.kodluyoruz.org",
+          },
+          {
+            icon: <IoGameController size={40} />,
+            text: (
+              <>
                 Game Developer Intern - 2KEK GAMES <br />
                 2023
-              </p>
-            </div>
-            <div className="experiance-back">
-              <img src={TWOKEKGAMES} alt="SDU_Logo" className="logo" />
-              <a href="https://2kekgames.com">Go to web Site</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="experiance">
-          <div className="experiance-inner">
-            <div className="experiance-front">
-              <IoCall size={40} />
-              <p className="experiance-text">
+              </>
+            ),
+            img: TWOKEKGAMES,
+            link: "https://2kekgames.com",
+          },
+          {
+            icon: <IoCall size={40} />,
+            text: (
+              <>
                 Technical Support - Teleperformance / Monster Notebook <br />
-                2023
-              </p>
-            </div>
-            <div className="experiance-back">
-              <img src={MONSTERNOTEBOOK} alt="SDU_Logo" className="logo" />
-              <a href="https://www.monsternotebook.com.tr">Go to web Site</a>
+                2020
+              </>
+            ),
+            img: MONSTERNOTEBOOK,
+            link: "https://www.monsternotebook.com.tr",
+          },
+        ].map((item, idx) => (
+          <div
+            className={`experiance${
+              flippedIndex === idx + 2 ? " flipped" : ""
+            }`}
+            key={idx + 2}
+            onClick={() => handleFlip(idx + 2)}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="experiance-inner">
+              <div className="experiance-front">
+                {item.icon}
+                <p className="experiance-text">{item.text}</p>
+              </div>
+              <div className="experiance-back">
+                <img src={item.img} alt="Logo" className="logo" />
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  Go to web Site
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

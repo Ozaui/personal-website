@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "../../styles/components/Projects.css";
 import ESCAPEFROMCORONA from "../../assets/EscapeFromCorona.png";
 import YOBEX from "../../assets/YOBEX.png";
-
 import SALONBASE from "../../assets/SalonBase.png";
 import YOURMEAL from "../../assets/YourMeal.png";
 
@@ -35,10 +34,16 @@ const projects = [
 
 const Projects = () => {
   const [current, setCurrent] = useState(0);
+  const [isFading, setIsFading] = useState(false);
   const timeoutRef = useRef(null);
+  const fadeTimeoutRef = useRef(null);
 
   const goTo = (idx) => {
-    setCurrent((idx + projects.length) % projects.length);
+    setIsFading(true);
+    fadeTimeoutRef.current = setTimeout(() => {
+      setCurrent((idx + projects.length) % projects.length);
+      setIsFading(false);
+    }, 350); // fade out duration
   };
 
   const next = () => goTo(current + 1);
@@ -51,8 +56,12 @@ const Projects = () => {
     return () => clearTimeout(timeoutRef.current);
   }, [current]);
 
+  useEffect(() => {
+    return () => clearTimeout(fadeTimeoutRef.current);
+  }, []);
+
   return (
-    <div className="projects-section">
+    <div className="projects-section" id="projects-section">
       <h1 className="experiance-title">Projects</h1>
       <div className="projects-carousel-wrapper">
         <button
@@ -63,23 +72,25 @@ const Projects = () => {
           &#8592;
         </button>
         <div className="projects-carousel fullwidth">
-          {projects.map((project, idx) => (
-            <div
-              className={`project-card${idx === current ? " active" : ""}`}
-              key={project.title}
-              style={{
-                backgroundImage: `url(${project.img})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              <div className="project-overlay">
-                <div className="project-name">{project.title}</div>
-                <div className="project-desc">{project.description}</div>
+          {projects.map((project, idx) =>
+            idx === current ? (
+              <div
+                className={`project-card active${isFading ? " fading" : ""}`}
+                key={project.title}
+                style={{
+                  backgroundImage: `url(${project.img})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                <div className="project-overlay">
+                  <div className="project-name">{project.title}</div>
+                  <div className="project-desc">{project.description}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            ) : null
+          )}
         </div>
         <button
           className="carousel-arrow right"

@@ -9,6 +9,7 @@ const Header = () => {
   const dispatch = useDispatch();
   return (
     <div
+      className="header-container"
       style={{
         position: "fixed",
         top: 0,
@@ -21,20 +22,51 @@ const Header = () => {
       }}
     >
       <div
+        className="header-inner"
         style={{
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "center",
           padding: "0 16px",
           height: HEADER_HEIGHT,
         }}
       >
-        <div>
-          <button>Contact Me</button>
-          <button>My Projects</button>
-          <button>About Me</button>
-        </div>
+        <nav className="main-nav">
+          <button
+            className="nav-btn"
+            onClick={() => {
+              const el = document.getElementById("education-section");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+          >
+            Experiance
+          </button>
+          <button
+            className="nav-btn"
+            onClick={() => {
+              const el = document.getElementById("projects-section");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+          >
+            My Projects
+          </button>
+          <button
+            className="nav-btn"
+            onClick={() => {
+              const el = document.getElementById("contact-section");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+          >
+            Contact Me
+          </button>
+        </nav>
         <button
           onClick={() => dispatch(handleMode())}
           style={{
@@ -43,6 +75,10 @@ const Header = () => {
             background: "transparent",
             outline: "none",
             color: mode === "dark" ? "#ffffff" : "#333333",
+            position: "absolute",
+            right: 32,
+            top: "50%",
+            transform: "translateY(-50%)",
           }}
         >
           {mode === "dark" ? <FaSun size={30} /> : <FaRegMoon size={30} />}

@@ -4,6 +4,7 @@ import Header from "./components/layout/Header";
 import Body from "./components/sections/Body";
 import AboutMe from "./components/sections/AboutMe";
 import Projects from "./components/sections/Projects";
+import Contact from "./components/sections/Contact";
 import { useSelector } from "react-redux";
 
 const HEADER_HEIGHT = 72;
@@ -31,6 +32,7 @@ function App() {
         <AboutMe />
         <hr />
         <Projects />
+        <Contact />
       </div>
     </>
   );
