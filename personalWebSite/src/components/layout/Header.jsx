@@ -42,7 +42,7 @@ const Header = () => {
               }
             }}
           >
-            Experiance
+            Experience
           </button>
           <button
             className="nav-btn"
